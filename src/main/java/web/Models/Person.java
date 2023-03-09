@@ -1,9 +1,19 @@
 package web.Models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="person")
 public class Person {
-    private long id;
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    private int id;
+    @Column
     private String firstName;
+    @Column
     private String lastName;
+    @Column
     private String email;
 
     public Person() {
@@ -15,18 +25,18 @@ public class Person {
         this.email = email;
     }
 
-    public Person(long id, String firstName, String lastName, String email) {
+    public Person(int id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
