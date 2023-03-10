@@ -1,12 +1,24 @@
 package web.dao;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import web.Models.Person;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 @Component
+@Repository
 public class PersonDAOImpl implements PersonDAO{
+//
+//    @PersistenceContext
+//    private EntityManager entityManager;
+//    public PersonDAOImpl( EntityManager entityManager) {
+//        this.entityManager = entityManager;
+//    }
+
+
     private static int PEOPLE_COUNT;
     private List<Person> people;
     {

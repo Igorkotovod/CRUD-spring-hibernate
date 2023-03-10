@@ -3,9 +3,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <title>New Person</title>
+  <title>New Person</title>
 </head>
 <body>
+<div align="center">
 <form th:method="POST" th:action="@{/people}" th:object="${person}">
   <label for="firstName">Enter name:</label>
   <input type="text" th:field="*{firstName}" id="firstName">
@@ -16,7 +17,9 @@
   <label for="email">Enter email:</label>
   <input type="text" th:field="*{email}" id="email">
   <br/>
+  <h2>********************</h2>
   <input type="submit" value="Create!"/>
 </form>
+</div>
 </body>
 </html>

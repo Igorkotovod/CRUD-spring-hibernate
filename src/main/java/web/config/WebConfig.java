@@ -51,4 +51,5 @@ public class WebConfig implements WebMvcConfigurer {
         resolver.setContentType("text/html; charset=UTF-8");
         registry.viewResolver(resolver);
     }
+
 }

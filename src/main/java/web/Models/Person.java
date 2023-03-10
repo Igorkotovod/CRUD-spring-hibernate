@@ -1,6 +1,10 @@
 package web.Models;
 
+
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="person")
@@ -10,10 +14,16 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private int id;
     @Column
+    @NotEmpty
+    @Size(min = 1, max = 48, message = "имя должно быть от 1 до 48 символов")
     private String firstName;
     @Column
+    @NotEmpty
+    @Size(min = 1, max = 48, message = "фамилия должна быть от 1 до 48 символов")
     private String lastName;
     @Column
+    @NotEmpty
+    @Email
     private String email;
 
     public Person() {
