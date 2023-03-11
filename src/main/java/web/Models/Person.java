@@ -6,22 +6,22 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-@Entity
-@Table(name="person")
+//@Entity
+//@Table(name="person")
 public class Person {
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+   // @Id
+   // @Column
+   // @GeneratedValue(strategy = GenerationType.IDENTITY )
     private int id;
-    @Column
+   // @Column
     @NotEmpty
     @Size(min = 1, max = 48, message = "имя должно быть от 1 до 48 символов")
     private String firstName;
-    @Column
+    //@Column
     @NotEmpty
     @Size(min = 1, max = 48, message = "фамилия должна быть от 1 до 48 символов")
     private String lastName;
-    @Column
+    //@Column
     @NotEmpty
     @Email
     private String email;

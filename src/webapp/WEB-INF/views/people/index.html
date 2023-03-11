@@ -11,6 +11,7 @@
   <h2>ВСЕ ЛЮДИ</h2>
 <div th:each="person : ${people}" >
   <a th:href="@{/people/{id}(id=${person.getId()})}"  th:text="${person.getFirstName()+'  '+ person.getLastName()}">user</a>
+  <h2>    </h2>
 </div>
 <br/>
 <hr/>
