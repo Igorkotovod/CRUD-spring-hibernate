@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public class PersonDAOImpl implements PersonDAO{
 
-private final JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
     @Autowired
     public PersonDAOImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
