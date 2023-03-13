@@ -18,26 +18,17 @@ private final JdbcTemplate jdbcTemplate;
         this.jdbcTemplate = jdbcTemplate;
     }
 
-//
-//    @PersistenceContext
-//    private EntityManager entityManager;
-//    public PersonDAOImpl( EntityManager entityManager) {
-//        this.entityManager = entityManager;
-//    }
-
-
     public List<Person> index() {
         return jdbcTemplate.query("SELECT * FROM person", new BeanPropertyRowMapper<>(Person.class));
     }
 
     public Person show(int id) {
-
         return jdbcTemplate.query("SELECT * FROM person WHERE id=?", new Object[]{id}, new BeanPropertyRowMapper<>(Person.class))
                 .stream().findAny().orElse(null);
     }
 
     public void save(Person person) {
-        jdbcTemplate.update("INSERT INTO person VALUES(1, ?, ?, ?)", person.getFirstName(), person.getLastName(), person.getEmail());
+        jdbcTemplate.update("INSERT INTO person(firstName, lastName, email) VALUES(?, ?, ?)", person.getFirstName(), person.getLastName(), person.getEmail());
     }
 
     public void update(int id, Person updatedPerson) {
